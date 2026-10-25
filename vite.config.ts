@@ -18,8 +18,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(import.meta.dirname, 'src/index.ts'),
-      name: 'arlogger',
-      fileName: 'arlogger',
+      name: 'logarg',
+      fileName: 'logarg',
       formats: ['es', 'cjs'],
     },
     sourcemap: true,
