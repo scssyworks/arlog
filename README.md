@@ -25,6 +25,6 @@ Tests live next to their sources (`src/foo.test.ts`). Name a file `*.node.test.t
 
 - Tags must point at a commit on the matching `release/*` branch.
 - `package.json` stays at `0.0.0`; CI stamps the version at publish time.
-- Publishing uses npm trusted publishing (OIDC) from `.github/workflows/release.yml`. Build and publish are separate jobs; only the publish job holds the OIDC token and it publishes a prebuilt tarball.
+- Publishing uses npm trusted publishing (OIDC) from `.github/workflows/release.yml`. Build and publish are separate jobs; only the publish job holds the OIDC token and it stages a prebuilt tarball with `npm stage publish`. Every release (canary, rc, stable) then needs a maintainer to approve it with 2FA: `npm stage list logarg`, `npm stage view <id>`, `npm stage approve <id>`, or the Staged Packages tab on npmjs.com.
 - Versions are valid SemVer; canary/next use `g<sha7>` so an all-numeric SHA with a leading zero cannot create an invalid version.
 - Third-party actions are pinned to commit SHAs (version in a trailing comment); Dependabot opens PRs to bump them.
