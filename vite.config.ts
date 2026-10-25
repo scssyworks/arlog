@@ -45,6 +45,13 @@ export default defineConfig({
           exclude: ['src/**/*.node.test.ts'],
         },
       },
+      {
+        test: {
+          name: 'scripts',
+          environment: 'node',
+          include: ['scripts/**/*.test.mjs'],
+        },
+      },
     ],
   },
 });

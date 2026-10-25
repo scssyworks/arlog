@@ -4,6 +4,7 @@
 
 ```sh
 npm ci
+npm run lint   # ESLint incl. ReDoS analysis of every regex
 npm test        # unit tests, run in Node and in happy-dom
 npm run build   # ESM + CJS + types into dist/
 ```

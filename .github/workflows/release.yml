@@ -39,6 +39,7 @@ jobs:
           package-manager-cache: false # no caches in the release path
       - run: npm ci --ignore-scripts
       - run: npm run typecheck
+      - run: npm run lint
       - run: npm test
       - id: release
         run: node scripts/resolve-release.mjs
